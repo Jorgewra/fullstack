@@ -1,0 +1,43 @@
+<mat-toolbar color="primary">
+  <span>{{title}}</span>
+</mat-toolbar>
+<div class="container">
+  <button mat-raised-button color="primary" (click)="saveEmployee()">Novo</button>
+  <button mat-icon-button aria-label="Editar" (click)="getEmployees()">
+    <mat-icon>refresh</mat-icon>
+  </button>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Nome</th>
+      <th>Telefone</th>
+      <th>e-mail</th>
+      <th>Empresa</th>
+      <th>Setor</th>
+      <th>Cargo</th>
+      <th></th>
+      <th></th>
+    </tr>
+
+    <tr *ngFor="let emp of listEmployees">
+      <td>{{emp.id}}</td>
+      <td>{{emp.name}}</td>
+      <td>{{emp.phone}}</td>
+      <td>{{emp.email}}</td>
+      <td>{{emp.company}}</td>
+      <td>{{emp.sector}}</td>
+      <td>{{emp.role}}</td>
+      <td>
+        <button mat-icon-button aria-label="Editar" (click)="formEdit(emp)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </td>
+      <td>
+        <button mat-icon-button aria-label="Editar" (click)="delete(emp.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>
+

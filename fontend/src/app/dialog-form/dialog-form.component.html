@@ -1,0 +1,36 @@
+<h2 mat-dialog-title>Registro de funcionários</h2>
+<mat-dialog-content class="mat-typography">
+
+  <mat-form-field class="full-width">
+    <mat-label>Nome</mat-label>
+    <input matInput [formControl]="name" placeholder="Nome completo" [(ngModel)]="objetForm.name">
+    <mat-error *ngIf="name.invalid">Informe um nome corretamente</mat-error>
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-label>E-mail</mat-label>
+    <input matInput [formControl]="email"  placeholder="Ex. pat@example.com" [(ngModel)]="objetForm.email">
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-label>Telefone</mat-label>
+    <input matInput [formControl]="phone"  placeholder="(ddd) 9999-99999" [(ngModel)]="objetForm.phone">
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-label>Empresa</mat-label>
+    <input matInput [formControl]="company"  placeholder="Qual empresa?" [(ngModel)]="objetForm.company">
+
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-label>Cargo</mat-label>
+    <input matInput [formControl]="role"  placeholder="Qual o Cargo? " [(ngModel)]="objetForm.role">
+
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-label>Setor</mat-label>
+    <input matInput [formControl]="sector"  placeholder="Qual o setor de trabalho? " [(ngModel)]="objetForm.sector">
+  </mat-form-field>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancelar</button>
+    <button mat-button type="submit" cdkFocusInitial (click)="save($event)">Salvar</button>
+  </mat-dialog-actions>
+
+</mat-dialog-content>
