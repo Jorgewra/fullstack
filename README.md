@@ -5,14 +5,14 @@
 
 ## Info
     - NodeJS
-[here](https://github.com/Jorgewra/fullstack/backend)
+[here](https://github.com/Jorgewra/fullstack/tree/master/backend)
 # Fontend 
  - npm install
  - ng serve
 
  ## Info
     - Angular 9
- [here](https://github.com/Jorgewra/fullstack/frontend)
+ [here](https://github.com/Jorgewra/fullstack/tree/master/frontend)
 
 ## Authors
 
