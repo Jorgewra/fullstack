@@ -18,7 +18,7 @@
 
 * **Jorge Almeida** - *Initial work* - [jorgewra](https://github.com/Jorgewra)
 
-See also the list of [contributors](https://github.com/Jorgewra/DesktopLunesWallet/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/Jorgewra/fullstack/contributors) who participated in this project.
 
 ## License
 
