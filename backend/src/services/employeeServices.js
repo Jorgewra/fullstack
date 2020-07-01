@@ -44,7 +44,7 @@ module.exports = {
   get: async function (req, res) {
     try {
       await daoSelect(
-        `SELECT emp.* FROM employees emp ORDER BY emp.name asc`,
+        `SELECT emp.* FROM employees emp ORDER BY emp.role asc`,
         res
       );
     } catch (error) {
@@ -59,6 +59,22 @@ module.exports = {
     try {
       await daoSelect(`DELETE FROM employees WHERE id = ${req.query.id}`, res);
     } catch (error) {
+      res.status(500).json({ status: 500, message: error });
+    }
+  },
+  search: async function (req, res) {
+    if (!req.query.search) {
+      res.status(500).json({ status: 400, message: "not found text" });
+      return;
+    }
+    if (!req.query.fieldName) {
+      res.status(500).json({ status: 400, message: "not found text" });
+      return;
+    }
+    try {
+      await daoSelect(`SELECT * FROM employees WHERE ${req.query.fieldName} like '%${req.query.search}%' ORDER BY role asc`, res);
+    } catch (error) {
+       console.log(error);
       res.status(500).json({ status: 500, message: error });
     }
   },

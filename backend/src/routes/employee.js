@@ -14,4 +14,7 @@ router.put('/update', function(req, res) {
 router.delete('/', function(req, res) {
   employeeService.delete(req, res)
 });
+router.get('/search', function(req, res) {
+  employeeService.search(req, res)
+});
 module.exports = router;
