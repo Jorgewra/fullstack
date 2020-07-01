@@ -6,38 +6,65 @@
   <button mat-icon-button aria-label="Editar" (click)="getEmployees()">
     <mat-icon>refresh</mat-icon>
   </button>
+  <mat-form-field appearance="fill">
+    <mat-label>Filtro</mat-label>
+    <select matNativeControl required [(ngModel)]="fieldName">
+      <option value="name">Nome</option>
+      <option value="phone">Telefone</option>
+      <option value="company">Empresa</option>
+      <option value="sector">Setor</option>
+      <option value="email">E-mail</option>
+      <option value="role">Cargo</option>
+    </select>
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-label>Pesaquisa</mat-label>
+    <input matInput placeholder="" [(ngModel)]="searchText">
+  </mat-form-field>
+  <button mat-icon-button aria-label="Search" (click)="searchEmployees()">
+    Buscar
+  </button>
   <table>
     <tr>
-      <th>Id</th>
-      <th>Nome</th>
-      <th>Telefone</th>
-      <th>e-mail</th>
-      <th>Empresa</th>
-      <th>Setor</th>
-      <th>Cargo</th>
-      <th></th>
-      <th></th>
-    </tr>
-
-    <tr *ngFor="let emp of listEmployees">
-      <td>{{emp.id}}</td>
-      <td>{{emp.name}}</td>
-      <td>{{emp.phone}}</td>
-      <td>{{emp.email}}</td>
-      <td>{{emp.company}}</td>
-      <td>{{emp.sector}}</td>
-      <td>{{emp.role}}</td>
       <td>
-        <button mat-icon-button aria-label="Editar" (click)="formEdit(emp)">
-          <mat-icon>edit</mat-icon>
-        </button>
+        <table>
+          <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>e-mail</th>
+            <th>Empresa</th>
+            <th>Setor</th>
+            <th>Cargo</th>
+            <th></th>
+            <th></th>
+          </tr>
+
+          <tr *ngFor="let emp of listEmployees">
+            <td>{{emp.id}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.phone}}</td>
+            <td>{{emp.email}}</td>
+            <td>{{emp.company}}</td>
+            <td>{{emp.sector}}</td>
+            <td>{{emp.role}}</td>
+            <td>
+              <button mat-icon-button aria-label="Editar" (click)="formEdit(emp)">
+                <mat-icon>edit</mat-icon>
+              </button>
+            </td>
+            <td>
+              <button mat-icon-button aria-label="Editar" (click)="delete(emp.id)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </tr>
+        </table>
       </td>
       <td>
-        <button mat-icon-button aria-label="Editar" (click)="delete(emp.id)">
-          <mat-icon>delete</mat-icon>
-        </button>
+        <div id="piechart" style="width: 350px; height: 250px;"></div>
       </td>
     </tr>
   </table>
-</div>
 
+</div>

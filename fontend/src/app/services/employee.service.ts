@@ -19,6 +19,10 @@ export class EmployeeService {
     return await this.http
       .get(this.apiREST, { headers: this.headers }).toPromise();
   }
+  async searchEmployees(searchText = '', fieldName = '' ) {
+    return await this.http
+      .get(`${this.apiREST}/search?search=${searchText}&fieldName=${fieldName}`, { headers: this.headers }).toPromise();
+  }
   async saveEmployees(body) {
     const object = {
       name: body.name,
