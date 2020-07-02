@@ -34,9 +34,10 @@ export class AppComponent implements OnInit {
     this.getEmployees();
   }
   getDataGraf() {
-    let list_aux = [['Cargo', ""]];
+    let list_aux = [];
     let count = 0;
     let nameRole = '';
+    list_aux.push(['Cargo', 'Qunatidade']);
     this.listEmployees.forEach(el => {
       if (el.role !== nameRole) {
         count = 0;
